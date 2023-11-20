@@ -23,7 +23,7 @@ const paleta4 = new Paletas (4, "frutillita", "frutilla", 500)
 const paleta5 = new Paletas (5, "banana split", "banana y dulce de leche", 500)
 
 
-//creo un array vacio para guardar con push la paleta1
+//creo un array vacio para guardar con push las paletas creadas con las class
 const listaPaletas = []
 listaPaletas.push(paleta1, paleta2, paleta3, paleta4, paleta5)
 //console.log(listaPaletas)
@@ -46,11 +46,17 @@ function agregarPaleta(){
 //función para case 3 del menú 
 function consultarCatalogo(array){//array=listaPaletas se pasa este nombre en el llamado en el menú
     console.log("Nuestro catálogo es: ")
-    //con el for...of recorro todos los elementos del array listaPaletas
-    for(const paleta of array){
-        console.log(paleta.id, paleta.nombre, paleta.sabor, paleta.precio)
-    }
+    //con el forEach() recorro todos los elementos del array listaPaletas
+    array.forEach((elemento) => console.log(elemento.id, elemento.nombre, elemento.sabor,elemento.precio))
 }
+
+//función para case 4 del menú
+function buscarPorPrecio(array){
+    let precioIngresado = parseInt(prompt("Ingrese el precio "))
+    let precioBuscado = array.filter((elemento) => elemento.precio === precioIngresado)
+    console.log(precioBuscado)
+}
+
     
 
 //ESTRUCTURA PARA UN MENÚ: hecho con do while y switch
@@ -62,7 +68,8 @@ function menu() {
         1 - Agregar Paleta
         2 - Borrar Paleta
         3 - Consultar catálogo
-        4 - Salir del menu`))
+        4 - Buscar paleta por precio 
+        5 - Salir del menu`))
         switch(opcionIngresada){
             case 1:
                 agregarPaleta()
@@ -74,6 +81,9 @@ function menu() {
                 consultarCatalogo(listaPaletas)//aqui paso en parametro el nombre del array
             break;
             case 4:
+                buscarPorPrecio(listaPaletas)
+                break;
+            case 5:
                 console.log(`Gracias por utilizar nuestra app. Saludos!`)
                 salirMenu = false
             break;  
