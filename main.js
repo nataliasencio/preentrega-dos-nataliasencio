@@ -34,6 +34,11 @@ function agregarPaleta(){
     let nombreI = prompt("Ingrese el nombre de la paleta")
     let saborI = prompt("Ingrese el sabor de la paleta")
     let precioI = parseInt(prompt("Ingrese el precio de la paleta"))
+
+    if(isNaN(precioI) || nombreI === "" || nombreI ==null  || saborI === "" || saborI ==null ) {
+        alert("Por favor ingresa valores válidos")
+        return
+    }
 //instancio los objetos nuevos con la class
     const paleta6 = new Paletas (listaPaletas.length+1, nombreI, saborI, precioI)//con length+1 los id no se repiten
     //console.log(paleta6)
@@ -95,4 +100,4 @@ function menu() {
     
     }
     //LLAMADO DE LA FCIÓN MENÚ
-    menu()
+   menu()
