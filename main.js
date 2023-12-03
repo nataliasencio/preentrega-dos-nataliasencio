@@ -62,6 +62,14 @@ function buscarPorPrecio(array){
     console.log(precioBuscado)
 }
 
+//función para borrar paletas
+//con método slice()
+function borrarPaletas (array){
+    let eliminoPaletas = array.slice((prompt ("consulte catálogo y con el número de id elimine la/s paleta/s" )))
+    //se coloca un numero, este es hasta el indice que quiero eliminar 
+    console.log(eliminoPaletas)
+}
+
     
 
 //ESTRUCTURA PARA UN MENÚ: hecho con do while y switch
@@ -80,7 +88,7 @@ function menu() {
                 agregarPaleta()
              break;
             case 2:
-                console.log("Borrar paleta")
+                borrarPaletas(listaPaletas)
             break;
             case 3:
                 consultarCatalogo(listaPaletas)//aqui paso en parametro el nombre del array
