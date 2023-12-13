@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>preentrega-tres</title>
 </head>
 <body>
-    
+    <h1>Paletas Heladas</h1>
+    <!-- input para agregar paletas y boton agregar con sus id para conectarlos con JS -->
+    <h2>Agregar Paletas</h2>
+    <label for="nombre">Nombre </label>
+    <input type="text" id="nombre">
 
-    <script src="main.js"></script>
+    <label for="sabor">Sabor </label>
+    <input type="text" id="sabor">
+
+    <label for="precio">Precio</label>
+    <input type="number" id="precio">
+
+    <label for="stock">cantidad en stock</label>
+    <input type="number" id="stock">
+
+    <button id="agregar">Agregar</button>
+
+    
+    <!-- creo un div con id para mostrar el valor de los input(agregar paleta) en la página y eliminar el console-->
+    <div id="muestroPaletas"></div>
+
+
+    <script src="ultimo.js"></script>
 </body>
 </html>
