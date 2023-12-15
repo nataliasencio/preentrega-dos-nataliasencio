@@ -57,12 +57,8 @@ botonAgregarPaleta.addEventListener("click", function(){
 //creo una fcion que recorre el array y lo muestra en el DOM
 let mostrarPaletas = () =>{
    
-    //vacio los input
+    //vacio el div para no repetir contenido.
     resultadoContenedor.innerHTML = ""
-    nombrePaleta.value = ""
-    saborPaleta.value = ""
-    precioPaleta.value = ""
-    stockPaleta.value = ""
     
     //recorro el array y lo imprimo en el DOM
     listaPaletas.forEach(function(elemento){
