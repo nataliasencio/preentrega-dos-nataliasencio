@@ -3,7 +3,7 @@
 //sitio de venta de paletas heladas
 
 
-//fción constructora con un metodo para crear nuevas paletas y mostrar los datos ingresados por el usuario
+//fción constructora con un método para crear nuevas paletas y mostrar los datos ingresados por el usuario
 class Paletas {
     constructor (id, nombre, sabor, precio){
         this.id = id,
