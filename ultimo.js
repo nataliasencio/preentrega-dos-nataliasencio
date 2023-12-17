@@ -1,24 +1,22 @@
 //traigo los elementos input y el boton por id y los guardo en variables:
+//input y boton para agregar paletas
 let nombrePaleta = document.getElementById("nombre")
 let saborPaleta = document.getElementById("sabor")
 let precioPaleta = document.getElementById("precio")
 let stockPaleta = document.getElementById("stock")
 let botonAgregarPaleta = document.getElementById("agregar")
-
 //boton para traer las paletas agregadas recientemente en el localStorage
-let botonTraer = document.getElementById("traer guardadas")
-//evento del boton que trae las paletas guardadas en el localStorage
-botonTraer.addEventListener("click", function(){
-let paletaGuardada = localStorage.getItem("PaletaAgregada")
-    if(paletaGuardada){
-        listaPaletas = JSON.parse(paletaGuardada)
-        mostrarPaletas()}
-    })
+let botonTraer = document.getElementById("traerGuardadas")
+
+
+
+
+
 //para que al cargar la pagina traiga el catalogo del localStorage y lo imprima en el DOM
  window.onload = function(){
     let catalogoGuardado = localStorage.getItem("catalogo")
-    paletaGuardada = localStorage.getItem("PaletaAgregada")
-    if(catalogoGuardado){
+    let paletaGuardada = localStorage.getItem("PaletaAgregada")
+    if(catalogoGuardado && paletaGuardada){
         listaPaletasCatalogo = JSON.parse(catalogoGuardado)
         listaPaletas = JSON.parse(paletaGuardada)
         mostrarPaletasCatalogo()
@@ -85,10 +83,17 @@ let mostrarPaletas = () =>{
 }
 
 
+//evento del boton que trae las paletas guardadas en el localStorage
+botonTraer.addEventListener("click", function(){
+    let paletaGuardada = localStorage.getItem("PaletaAgregada")
+        if(paletaGuardada){
+            listaPaletas = JSON.parse(paletaGuardada)
+            mostrarPaletas()}
+        })
 
 
 
-//intentaré hacer un catálogo y filtrar las paletas por precios
+//intentaré hacer un catálogo 
 //necesito:
 /* 
 para catalogo
@@ -142,3 +147,4 @@ let mostrarPaletasCatalogo = () =>{
       })
 
 }
+
